@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRedirect, browserHistory } from 'react-router'
 import { syncHistory } from 'redux-simple-router'
@@ -8,9 +8,8 @@ import thunkMiddleware from 'redux-thunk'
 
 import reducers from './reducers'
 import App from './components/App'
-import List from './components/List'
-import Create from './components/Create'
-import Authenticate from './components/Authenticate'
+import Buttons from './components/Buttons'
+import Records from './components/Records'
 
 const reduxRouterMiddleware = syncHistory(browserHistory)
 const createStoreWithMiddleware = applyMiddleware(reduxRouterMiddleware, thunkMiddleware)(createStore)
@@ -20,11 +19,10 @@ render((
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <IndexRedirect to='/list'/>
+        <IndexRedirect to='/buttons'/>
 
-        <Route path="/list" component={List}/>
-        <Route path="/create" component={Create}/>
-        <Route path='/authenticate' component={Authenticate}/>
+        <Route path="/buttons" component={Buttons}/>
+        <Route path="/records" component={Records}/>
       </Route>
     </Router>
   </Provider>
