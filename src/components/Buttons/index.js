@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { loadButtons } from '../../actions/buttons'
 import { saveRecord } from '../../actions/records'
+import styles from './styles.css';
 
 export class Buttons extends Component {
 	constructor (props) {
@@ -25,8 +26,9 @@ export class Buttons extends Component {
 				<h1>The Buttons</h1>
 				<ul>
 					{this.props.buttons.map((button, idx) =>
-						<li key={idx}>
+						<li key={idx} className={styles.list}>
 							<button
+								className={styles.btn}
 								data-value={button.value}
 								onClick={this.handleClick}
 							>
