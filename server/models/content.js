@@ -12,8 +12,8 @@ const ContentSchema = Schema({
 		type: Number,
 		default: 0
 	},
-	article: {
-		type: Object
+	img: {
+		type: String
 	}
 })
 

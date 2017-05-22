@@ -33,11 +33,11 @@ const handleGetContent = (request, reply) => {
 			return item;
 		})
 
-		const returnList = weightCalcList2.map(item => {
+		const returnList = weightCalcList2.map(item3 => {
 			return {
-				_id: item._id,
-				weight: item.weight,
-				article: item.article
+				_id: item3._id,
+				weight: item3.weight,
+				img: item3.img
 			}
 		})
 
