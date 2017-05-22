@@ -6,7 +6,10 @@ export class Records extends Component {
 	constructor (props) {
 		super(props)
 
-		props.dispatch(loadRecords())
+	}
+
+	componentWillMount () {
+		this.props.dispatch(loadRecords())
 	}
 
 	render () {
@@ -16,7 +19,7 @@ export class Records extends Component {
 				<ul>
 					{this.props.records.map((record, idx) =>
 						<li key={idx}>
-								{record.value}
+							{record.value}
 						</li>
 					)}
 				</ul>

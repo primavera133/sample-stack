@@ -2,7 +2,8 @@ import mongoose, { Schema } from 'mongoose'
 
 const recordSchema = Schema({
 	value: {
-		type: String
+		type: String,
+		required: true
 	}
 })
 

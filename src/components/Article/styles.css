@@ -1,0 +1,20 @@
+:local .article {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+}
+
+:local .date {
+    color: #e09105;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+:local .header {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+:local .preamble {
+    font-weight: bold;
+}

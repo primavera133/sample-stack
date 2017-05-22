@@ -3,11 +3,15 @@ import { httpError } from './error';
 
 export const saveRecord = (value) => (dispatch) => {
 	return request.post('/api/record', { value: value })
-		.then(({ data }) => {
-			console.log('action value saved', value);
-		}).catch((error) => {
-			dispatch(httpError(error));
-		});
+		.then(
+			() => {
+				console.log('action value saved', value);
+			}
+		).catch(
+			(error) => {
+				dispatch(httpError(error));
+			}
+		);
 }
 
 export const loadRecords = () => (dispatch) => {

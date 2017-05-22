@@ -1,5 +1,5 @@
 {
   "database": {
-    "host": "mongodb://localhost/sample-stack"
+    "host": ""
   }
 }

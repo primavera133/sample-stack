@@ -2,5 +2,7 @@
 node_modules
 npm-debug.log
 dist/client/static
+config/development.json
+config/production.json
 
 .idea/

@@ -13,12 +13,13 @@ const getRecords = (request, reply) => {
 
 const addRecord = (request, reply) => {
 	const record = new Record({ ...request.payload })
-	record.save((error) => {
-		if (error) {
-			Boom.badImplementation()
-		}
-		reply().code(200)
-	});
+	record.save()
+		.then(result => {
+			reply().code(201)
+		})
+		.catch(error => {
+			reply(Boom.badImplementation())
+		})
 }
 
 exports.register = (server, options, next) => {

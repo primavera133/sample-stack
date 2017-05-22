@@ -1,0 +1,17 @@
+:local .author {
+    width: 100%;
+    max-width: 200px;
+    box-sizing: border-box;
+    border: solid  1px hotpink;
+    padding: 10px;
+}
+
+:local .img {
+    max-width: 100%;
+}
+
+:local .caption {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}

@@ -8,12 +8,12 @@ export class Buttons extends Component {
 	constructor (props) {
 		super(props)
 
-		this.handleClick = this.handleClick.bind(this);
+		//this.handleClick = this.handleClick.bind(this);
 
 		props.dispatch(loadButtons())
 	}
 
-	handleClick (event) {
+	handleClick = (event) => {
 		event.preventDefault();
 
 		const value = event.currentTarget.dataset['value'];

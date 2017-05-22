@@ -8,6 +8,7 @@ import thunkMiddleware from 'redux-thunk'
 
 import reducers from './reducers'
 import App from './components/App'
+import Basic from './components/Basic'
 import Buttons from './components/Buttons'
 import Records from './components/Records'
 
@@ -16,14 +17,14 @@ const createStoreWithMiddleware = applyMiddleware(reduxRouterMiddleware, thunkMi
 const store = createStoreWithMiddleware(reducers)
 
 render((
-  <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRedirect to='/buttons'/>
-
-        <Route path="/buttons" component={Buttons}/>
-        <Route path="/records" component={Records}/>
-      </Route>
-    </Router>
-  </Provider>
+	<Provider store={store}>
+		<Router history={browserHistory}>
+			<Route path="/" component={App}>
+				<IndexRedirect to='/basic'/>
+				<Route path="/basic" component={Basic}/>
+				<Route path="/buttons" component={Buttons}/>
+				<Route path="/records" component={Records}/>
+			</Route>
+		</Router>
+	</Provider>
 ), document.getElementById('root'))
