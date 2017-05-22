@@ -4,8 +4,7 @@ import Inert from 'inert'
 import mongoose from 'mongoose'
 import config from 'config'
 import base from './base'
-import buttons from './api/buttons'
-import records from './api/records'
+import content from './api/content'
 
 mongoose.connect(config.get('database.host'))
 mongoose.connection.on('error', console.error.bind(console, 'db error:'))
@@ -55,11 +54,7 @@ server.register([
   },
 
   {
-    register: buttons
-  },
-
-  {
-    register: records
+    register: content
   }
 ], (error) => {
   if (error) throw error
