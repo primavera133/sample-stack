@@ -23,9 +23,10 @@ const handleGetContent = (request, reply) => {
 		let totalCalculatedWeight = 0;
 
 		const weightCalcList = contentList.map((item, index) => {
-			item.calculatedWeight = item.baseWeight + (item.clicks * CLICKFACTOR);
-			totalCalculatedWeight += item.calculatedWeight;
-			return item;
+			const i = item.toObject()
+			i.calculatedWeight = i.baseWeight + (i.clicks * CLICKFACTOR);
+			totalCalculatedWeight += i.calculatedWeight;
+			return i;
 		})
 
 		const weightCalcList2 = weightCalcList.map((item, index) => {
